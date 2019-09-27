@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-    
+import "./style.css";
+
   class Barra extends Component{
       render(){
         return(
-          <Navbar style={{backgroundColor:"#004080"}}>
-            <Nav>
-              <Nav.Link href="#professors" style={{color:"white"}}>Professores</Nav.Link>
-              <Nav.Link href="#materia" style={{color:"white"}}>Materia</Nav.Link>
+          <Navbar fixed="top" className="NavbarAr">
+            <Nav className="direcao">
+              <div className='icon'>
+                <Nav.Link className='text_logo' href='/'>ALUNOWEB</Nav.Link>
+              </div>
+              <div className="links">
+                
+              </div>
             </Nav>
             </Navbar>
         );

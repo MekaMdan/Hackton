@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  grade: 
+  grade: 1.5
+  department: one
 
 two:
   name: MyString
-  grade: 
+  grade: 1.5
+  department: two

@@ -2,7 +2,8 @@ class CreateProfessors < ActiveRecord::Migration[5.2]
   def change
     create_table :professors do |t|
       t.string :name
-      t.double :grade
+      t.float :grade
+      t.references :department, foreign_key: true
 
       t.timestamps
     end

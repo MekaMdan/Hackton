@@ -18,7 +18,7 @@ class AvaliationsController < ApplicationController
     @avaliation = Avaliation.new(avaliation_params)
 
     if @avaliation.save
-      render json: @avaliation, status: :created, location: @avaliation
+      render json: @avaliation, status: :created
     else
       render json: @avaliation.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class AvaliationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def avaliation_params
-      params.require(:avaliation).permit(:index, :show, :create, :update, :delete)
+      params.permit(:text, :ranking)
     end
 end

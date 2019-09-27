@@ -18,7 +18,7 @@ class ProfessorsController < ApplicationController
     @professor = Professor.new(professor_params)
 
     if @professor.save
-      render json: @professor, status: :created, location: @professor
+      render json: @professor, status: :created
     else
       render json: @professor.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class ProfessorsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def professor_params
-      params.require(:professor).permit(:index, :show, :create, :update, :delete)
+      params.permit(:name, :grade)
     end
 end

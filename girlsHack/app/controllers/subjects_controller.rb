@@ -18,7 +18,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.new(subject_params)
 
     if @subject.save
-      render json: @subject, status: :created, location: @subject
+      render json: @subject, status: :created
     else
       render json: @subject.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def subject_params
-      params.require(:subject).permit(:index, :show, :create, :update, :delete)
+      params.permit(:name, :number)
     end
 end
